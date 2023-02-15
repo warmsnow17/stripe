@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -55,7 +55,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'django_examples.urls'
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+
 
 
 TEMPLATES = [
@@ -87,13 +87,14 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.getenv('DB_NAME', 'postgres'),
-        'USER': os.getenv('DB_USER', 'postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'postgres'),
-        'HOST': os.getenv('DB_HOST', 'postgres'),
-        'PORT': os.getenv('DB_PORT', 5432)
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432
     }
 }
+
 
 
 WSGI_APPLICATION = 'django_examples.wsgi.application'

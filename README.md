@@ -1,13 +1,15 @@
-## Django examples
+## Django + stripe
 
-A Django web app with example apps.
+В приложении используется докер.
 
-This repo will be updated when new apps are added to it.
+Выполните следующие команды:
 
-The current list of apps included:
+1. docker-compose up -d --build
+2. docker-compose exec web python manage.py makemigrations 
+3. docker-compose exec web python manage.py migrate
+4. docker-compose exec web python manage.py createsuperuser
+5. создайте админа -> зайдите в админ панель по адресу: http://0.0.0.0:8000/admin/ -> создайте товар (из stripe будет подтянут товар T-shirt)
+6. перейдите по адресу: http://0.0.0.0:8000/item/1/ -> нажмите buy
+7. в форме оплаты введите адрес эл.почты, номер карты 4242 4242 4242 4242, любой месяц/год, любой cvv -> нажмите оплатить
+8. после удачной оплаты вы увидите страницу с текстом 'Thanks for your order!!!!'
 
-### app_users
-An app to demonstrate using a custom user model in Django.
-
-### user_payment
-An app to receive user payments through Stripe.
