@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "stripe-project2"
+version = "0.1.0"
+description = ""
+authors = ["user <bav-574@mail.ru>"]
+readme = "README.md"
+packages = [{include = "stripe_project2"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.1.6"
+stripe = "^5.1.1"
+python-dotenv = "^0.21.1"
+psycopg2 = "^2.9.5"
+daphne = "^4.0.0"
+psycopg2-binary = "^2.9.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
